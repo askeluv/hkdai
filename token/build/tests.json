@@ -1,0 +1,54 @@
+{
+  "contracts": {
+    "HKDai": "79620a49d829cf6f164725c1025cfa4b9cb2fb58",
+    "MockDai": "f866af37e9b1bc336d7e61bf3f1df8dc54bc02d1",
+    "SafeMath": "456b9d8750ae578e5f6d7f9519305acfc9c64d92"
+  },
+  "tests": {
+    "tests/test_approve_transferFrom.py": {
+      "coverage": false,
+      "isolated": [
+        "HKDai",
+        "MockDai",
+        "SafeMath"
+      ],
+      "results": "....",
+      "sha1": "63601088a77538e7ccf3438cffd3c96cc79a9c21",
+      "txhash": []
+    },
+    "tests/test_deposit_withdraw.py": {
+      "coverage": false,
+      "isolated": [
+        "HKDai",
+        "MockDai",
+        "SafeMath"
+      ],
+      "results": "..",
+      "sha1": "25726f13348fde2e4baa5f145c7dd992d828e776",
+      "txhash": []
+    },
+    "tests/test_roundtrip.py": {
+      "coverage": false,
+      "isolated": [
+        "HKDai",
+        "MockDai",
+        "SafeMath"
+      ],
+      "results": "..",
+      "sha1": "f00e51306aa65701770a7c68815e264838a14708",
+      "txhash": []
+    },
+    "tests/test_transfer.py": {
+      "coverage": false,
+      "isolated": [
+        "HKDai",
+        "MockDai",
+        "SafeMath"
+      ],
+      "results": "..",
+      "sha1": "608c87be210fc8c32709874c61603746cbb75de9",
+      "txhash": []
+    }
+  },
+  "tx": {}
+}
