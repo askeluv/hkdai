@@ -5,7 +5,7 @@
         "default": "development", // the default network that brownie connects to
         "settings": {
             "gas_limit": false,
-            "gas_price": false,
+            "gas_price": "20 gwei",
             // if set to false, reverting tx's will raise without broadcasting
             "reverting_tx_gas_limit": false
         },

@@ -37,7 +37,6 @@ contract HKDai {
         string memory _symbol,
         string memory _name,
         uint256 _decimals,
-        uint256 _totalSupply,
         address _underlyingTokenAddress,
         uint256 _conversionFactor
     )
@@ -46,11 +45,9 @@ contract HKDai {
         symbol = _symbol;
         name = _name;
         decimals = _decimals;
-        totalSupply = _totalSupply;
         underlyingTokenAddress = _underlyingTokenAddress;
         conversionFactor = _conversionFactor;
-        balances[msg.sender] = _totalSupply;
-        emit Transfer(address(0), msg.sender, _totalSupply);
+        totalSupply = 0; // initial supply must be 0 since we have no underlying assets
     }
 
     function () external payable {
