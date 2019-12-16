@@ -1,8 +1,8 @@
 {
   "contracts": {
-    "HKDai": "79620a49d829cf6f164725c1025cfa4b9cb2fb58",
-    "MockDai": "f866af37e9b1bc336d7e61bf3f1df8dc54bc02d1",
-    "SafeMath": "456b9d8750ae578e5f6d7f9519305acfc9c64d92"
+    "HKDai": "9b1531208aa0bf9dd0e36c9266afd846d4713e25",
+    "MockDai": "f4e10619426d9cdf66dd3225313977c0f98da00e",
+    "SafeMath": "c1f7011ae75f1f16efdfd03d2d88b50901895b92"
   },
   "tests": {
     "tests/test_approve_transferFrom.py": {
@@ -13,8 +13,11 @@
         "SafeMath"
       ],
       "results": "....",
-      "sha1": "63601088a77538e7ccf3438cffd3c96cc79a9c21",
-      "txhash": []
+      "sha1": "28387a8496435ccfd70eca4c805c3367fc058f05",
+      "txhash": [
+        "7a1558e9ff321ace1e5f8e49423b2858fd8b5bc3",
+        "e4ad2b8797df45bf6a14fb2d394d4213981a8969"
+      ]
     },
     "tests/test_deposit_withdraw.py": {
       "coverage": false,
@@ -24,7 +27,7 @@
         "SafeMath"
       ],
       "results": "..",
-      "sha1": "25726f13348fde2e4baa5f145c7dd992d828e776",
+      "sha1": "a5bb4c37987eaf70a83348aa418821fb79df9a60",
       "txhash": []
     },
     "tests/test_roundtrip.py": {
@@ -35,7 +38,7 @@
         "SafeMath"
       ],
       "results": "..",
-      "sha1": "f00e51306aa65701770a7c68815e264838a14708",
+      "sha1": "52660f99eef1c28bda4bc5d9caa69e318f47769b",
       "txhash": []
     },
     "tests/test_transfer.py": {
@@ -46,9 +49,36 @@
         "SafeMath"
       ],
       "results": "..",
-      "sha1": "608c87be210fc8c32709874c61603746cbb75de9",
+      "sha1": "49a7dc6991dec9b63814808af9b247bf6bd22838",
       "txhash": []
     }
   },
-  "tx": {}
+  "tx": {
+    "7a1558e9ff321ace1e5f8e49423b2858fd8b5bc3": {
+      "HKDai": {
+        "contracts/HKDai.sol": [
+          [
+            5
+          ],
+          [
+            37
+          ],
+          []
+        ]
+      }
+    },
+    "e4ad2b8797df45bf6a14fb2d394d4213981a8969": {
+      "HKDai": {
+        "contracts/HKDai.sol": [
+          [
+            5
+          ],
+          [
+            37
+          ],
+          []
+        ]
+      }
+    }
+  }
 }

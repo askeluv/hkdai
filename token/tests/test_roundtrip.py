@@ -54,3 +54,5 @@ def test_roundtrip(dai, hkdai, accounts):
   assert hkdai.balanceOf(some_person) == "0 ether"
   assert dai.balanceOf(some_person) == "0.6 ether"
   assert dai.balanceOf(hkdai) == "0 ether"
+  assert hkdai.totalSupply() == "0 ether"
+  assert dai.balanceOf(hkdai) == "0 ether"

@@ -23,7 +23,7 @@ contract HKDai {
     uint256 public totalSupply;
 
     uint256 conversionFactor; // divide by 100 when using
-    address underlyingTokenAddress; // e.g. DAI
+    address underlyingTokenAddress; // e.g. DAI address
 
     mapping(address => uint256) balances;
     mapping(address => mapping(address => uint256)) allowed;
@@ -34,14 +34,12 @@ contract HKDai {
     event Burn(address burner, uint256 value);
 
     constructor(
-        string memory _symbol,
-        string memory _name,
-        uint256 _decimals,
-        address _underlyingTokenAddress,
-        uint256 _conversionFactor
-    )
-        public
-    {
+      string memory _symbol,
+      string memory _name,
+      uint256 _decimals,
+      address _underlyingTokenAddress,
+      uint256 _conversionFactor
+    ) public {
         symbol = _symbol;
         name = _name;
         decimals = _decimals;
@@ -58,14 +56,7 @@ contract HKDai {
         return balances[_owner];
     }
 
-    function allowance(
-        address _owner,
-        address _spender
-    )
-        public
-        view
-        returns (uint256)
-    {
+    function allowance(address _owner, address _spender) public view returns (uint256) {
         return allowed[_owner][_spender];
     }
 
@@ -84,14 +75,7 @@ contract HKDai {
         return true;
     }
 
-    function transferFrom(
-        address _from,
-        address _to,
-        uint256 _value
-    )
-        public
-        returns (bool)
-    {
+    function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
         require(allowed[_from][msg.sender] >= _value, "Insufficient allowance");
         balances[_from] = balances[_from].sub(_value);
         allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
@@ -110,17 +94,15 @@ contract HKDai {
     }
 
     function withdraw(uint256 _burnValue) public returns (bool) {
-        require(
-          balances[msg.sender] >= _burnValue,
+        require(balances[msg.sender] >= _burnValue,
           "Sender does not have enough tokens in their wallet to withdraw this amount."
         );
-        require(
-          totalSupply >= _burnValue,
+        require(totalSupply >= _burnValue,
           "Contract does not contain enough tokens to withdraw this amount."
         );
         totalSupply = totalSupply.sub(_burnValue);
         balances[msg.sender] = balances[msg.sender].sub(_burnValue);
-        uint256 _underlyingValue = _burnValue.div(conversionFactor).mul(100);
+        uint256 _underlyingValue = _burnValue.mul(100).div(conversionFactor);
         ERC20(underlyingTokenAddress).transferFrom(address(this), msg.sender, _underlyingValue);
         emit Burn(msg.sender, _burnValue);
         return true;

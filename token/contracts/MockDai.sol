@@ -24,9 +24,7 @@ contract MockDai {
         string memory _name,
         uint256 _decimals,
         uint256 _totalSupply
-    )
-        public
-    {
+    ) public {
         symbol = _symbol;
         name = _name;
         decimals = _decimals;
@@ -36,21 +34,14 @@ contract MockDai {
     }
 
     function () external payable {
-        revert();
+        revert("This contract is not payable");
     }
 
     function balanceOf(address _owner) public view returns (uint256) {
         return balances[_owner];
     }
 
-    function allowance(
-        address _owner,
-        address _spender
-    )
-        public
-        view
-        returns (uint256)
-    {
+    function allowance(address _owner, address _spender) public view returns (uint256) {
         return allowed[_owner][_spender];
     }
 
@@ -67,14 +58,7 @@ contract MockDai {
         return true;
     }
 
-    function transferFrom(
-        address _from,
-        address _to,
-        uint256 _value
-    )
-        public
-        returns (bool)
-    {
+    function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
         require(allowed[_from][msg.sender] >= _value, "Insufficient allowance");
         balances[_from] = balances[_from].sub(_value);
         allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
