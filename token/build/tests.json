@@ -14,10 +14,7 @@
       ],
       "results": "....",
       "sha1": "28387a8496435ccfd70eca4c805c3367fc058f05",
-      "txhash": [
-        "7a1558e9ff321ace1e5f8e49423b2858fd8b5bc3",
-        "e4ad2b8797df45bf6a14fb2d394d4213981a8969"
-      ]
+      "txhash": []
     },
     "tests/test_deposit_withdraw.py": {
       "coverage": false,
@@ -38,7 +35,7 @@
         "SafeMath"
       ],
       "results": "..",
-      "sha1": "52660f99eef1c28bda4bc5d9caa69e318f47769b",
+      "sha1": "8555b7c066ed08c6a83de1a5ea528e9f452dc4c5",
       "txhash": []
     },
     "tests/test_transfer.py": {
@@ -53,32 +50,5 @@
       "txhash": []
     }
   },
-  "tx": {
-    "7a1558e9ff321ace1e5f8e49423b2858fd8b5bc3": {
-      "HKDai": {
-        "contracts/HKDai.sol": [
-          [
-            5
-          ],
-          [
-            37
-          ],
-          []
-        ]
-      }
-    },
-    "e4ad2b8797df45bf6a14fb2d394d4213981a8969": {
-      "HKDai": {
-        "contracts/HKDai.sol": [
-          [
-            5
-          ],
-          [
-            37
-          ],
-          []
-        ]
-      }
-    }
-  }
+  "tx": {}
 }
