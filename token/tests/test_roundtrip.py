@@ -9,7 +9,6 @@ def test_roundtrip(dai, hkdai, accounts):
   another_person = accounts[2]
 
   dai.approve(external_agent, "1000 ether", {'from': external_agent})
-  #dai.approve(hkdai, "1000 ether", {'from': hkdai})
 
   # Give some person 1 DAI
   dai.transferFrom(external_agent, some_person, "1 ether", {'from': external_agent})
@@ -32,7 +31,6 @@ def test_roundtrip(dai, hkdai, accounts):
 
   # some person withdraws 2.8 HKDai for Dai
   hkdai.approve(hkdai.address, "10 ether", {'from': some_person})
-  #dai.approve(some_person, "1000 ether", {'from': some_person})
   hkdai.withdraw("3.9 ether", {'from': some_person})
   assert hkdai.balanceOf(some_person) == "0 ether"
   assert dai.balanceOf(some_person) == "0.5 ether"
